@@ -37,7 +37,7 @@ class _QuizAppState extends State<QuizApp> {
   setState(() {
     personalityScores[personality] = personalityScores[personality]! + 1;
 
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < questions.length) {
       currentQuestionIndex++; // Move to the next question
     } else {
       currentQuestionIndex = -1; // Show the result screen
@@ -60,7 +60,7 @@ Widget build(BuildContext context) {
   } else {
     // Show the question screen
     screen = QuestionScreen(
-      question: questions[currentQuestionIndex - 1],
+      question: questions[currentQuestionIndex -1],
       onAnswerSelected: answerQuestion,
     );
   }
